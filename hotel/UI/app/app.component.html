@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="cards-form">
+      <form #form="ngForm" (ngSubmit)="onSubmit()" >
+          <div class="form-group">
+              <label for="">Dish name</label>
+                <input type="text" name="DishName" [(ngModel)]="card.DishName" />
+          </div>
+          <div class="form-group">
+              <label for="">Dish Description</label>
+                <input type="text" name="Description"  [(ngModel)]="card.Description"/>
+          </div>
+          <div class="form-group">
+              <label for="">Dish Price</label>
+                <input type="text" name="DishPrice" [(ngModel)]="card.DishPrice" />
+          </div>
+          <div class="form-group">
+            <input type="submit" class="btn btn-danger">
+        </div>
+      </form>
+    </div>
+
+
+    <div class="cards-grid" *ngfor="let card of cards">
+        <div class="card-row-details">
+          <span>{{card.DishName}}</span>
+          <span>{{card.Description}}</span>
+          <span>{{card.DishPrice}}</span>
+        </div> 
+    </div>
+</div>
